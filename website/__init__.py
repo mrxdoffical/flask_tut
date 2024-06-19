@@ -2,10 +2,11 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 db = SQLAlchemy()
+
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'bero_123'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mr_lol_12@localhost/users'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users'
     db.init_app(app)
     
     
